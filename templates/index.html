@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title>Convert OCR to text</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<body>
+    <form action = "/upload" method="POST" enctype="multipart/form-data">
+        <label for="images" class="drop-container">
+
+        <span class="drop-title">Drop files here</span>
+  or
+        <input type="file" name="file" id="images" accept="image/*" autocomplete="off" multiple />
+        <button type = "submit" class="upload-btn">Upload</button>
+
+    </label>
+    </form>
+</body>
+</html>

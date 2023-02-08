@@ -1,0 +1,14 @@
+<html>
+<head>
+    <title>Files Converted Successfully</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<body>
+    <h1>We have converted your files</h1>
+    {% for i in range(count)%}
+    <center><img src="static/images/file{{i+1}}.png" height="20%" width="20%"></center>
+        <p>Filename:{{names[i]}} <br><b>Recognized Text: {{data[i]}}</b><hr></p>
+    {%endfor%}
+</body>
+</html>
