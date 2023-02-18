@@ -11,12 +11,15 @@ app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
+config = ('-l eng --oem 1 --psm 3')
+
+pytesseract.pytesseract.tesseract_cmd = "module/Tesseract-OCR/tesseract.exe"
+
+
 def read_text(name):
     img = cv2.imread("static/images/"+name)
     # pytesseract path
-    config = ('-l eng --oem 1 --psm 3')
 
-    pytesseract.pytesseract.tesseract_cmd = "module/Tesseract-OCR/tesseract.exe"
     text = pytesseract.image_to_string(img, config=config)
     # print results
     text = text.split('\n')
